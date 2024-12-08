@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Instrument_Serif } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"], // Add subsets as per your language requirements
+  variable: "--font-instrument-serif",
+  weight: ["400"], // Include the weights you need
+  style: ["italic", "normal"],
 });
 
 export const metadata: Metadata = {
@@ -26,9 +24,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${instrumentSerif.className} italic antialiased container mx-auto max-w-screen-xl overflow-x-hidden `}
       >
+        <div className="z-[1]">
+          <span className="light h-[60vh] w-[130px]" />
+          <span className="light h-[60vh] w-[130px]" />
+          <span className="light h-[60vh] w-[130px]" />
+          <span className="light h-[60vh] w-[130px]" />
+          <span className="light h-[60vh] w-[130px]" />
+          <span className="light h-[60vh] w-[130px]" />
+          <span className="light h-[60vh] w-[130px]" />
+          <span className="light h-[60vh] w-[130px]" />
+          {/*  */}
+          <span className="light h-[30vh] w-[60px]" />
+          <span className="light h-[30vh] w-[60px]" />
+          <span className="light h-[30vh] w-[60px]" />
+          <span className="light h-[30vh] w-[60px]" />
+          <span className="light h-[30vh] w-[60px]" />
+          <span className="light h-[30vh] w-[60px]" />
+          <span className="light h-[30vh] w-[60px]" />
+        </div>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

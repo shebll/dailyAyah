@@ -3,19 +3,161 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #cacaca;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+.light {
+  background: linear-gradient(
+    180deg,
+    #ffffff 55.132671734234236%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  mask: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.86) 10.53103885135135%,
+      rgba(0, 0, 0, 0.85) 33.76266891891891%,
+      rgb(0, 0, 0) 50.45045045045045%,
+      rgba(0, 0, 0, 0.7) 79.16314752252252%,
+      rgba(0, 0, 0, 0.07) 100%
+    )
+    add;
+  mix-blend-mode: screen;
+  overflow: hidden;
+  position: absolute;
+  /* animation: alternate lighting 2.5s infinite; */
+  animation: light-initial 2s ease-out;
+  opacity: 0.6;
+  will-change: auto;
+}
+.light:nth-child(1) {
+  transform: perspective(234px) scale(1) rotateX(38deg) skewX(-15deg);
+  top: -200px;
+  left: 30%;
+}
+
+.light:nth-child(2) {
+  transform: perspective(234px) scale(1) rotateX(30deg) skewX(-10deg);
+  top: -200px;
+  left: 35%;
+}
+
+.light:nth-child(3) {
+  transform: perspective(234px) scale(1) rotateX(25deg) skewX(-5deg);
+  top: -200px;
+  left: 40%;
+}
+.light:nth-child(4) {
+  transform: perspective(234px) scale(1) rotateX(25deg) skewX(0deg);
+  top: -200px;
+  left: 45%;
+}
+.light:nth-child(5) {
+  transform: perspective(234px) scale(1) rotateX(25deg) skewX(5deg);
+  top: -200px;
+  left: 50%;
+}
+.light:nth-child(6) {
+  transform: perspective(234px) scale(1) rotateX(25deg) skewX(10deg);
+  top: -200px;
+  left: 55%;
+}
+.light:nth-child(7) {
+  transform: perspective(234px) scale(1) rotateX(25deg) skewX(15deg);
+  top: -200px;
+  left: 60%;
+}
+.light:nth-child(8) {
+  transform: perspective(234px) scale(1) rotateX(25deg) skewX(20deg);
+  top: -200px;
+  left: 65%;
+}
+.light:nth-child(9) {
+  transform: perspective(234px) scale(1) rotateX(25deg) skewX(-15deg);
+  top: -60px;
+  left: 44%;
+}
+.light:nth-child(10) {
+  transform: perspective(234px) scale(1) rotateX(25deg) skewX(-10deg);
+  top: -60px;
+  left: 46%;
+}
+.light:nth-child(11) {
+  transform: perspective(234px) scale(1) rotateX(25deg) skewX(-5deg);
+  top: -60px;
+  left: 48%;
+}
+.light:nth-child(12) {
+  transform: perspective(234px) scale(1) rotateX(25deg) skewX(0deg);
+  top: -60px;
+  left: 50%;
+}
+.light:nth-child(13) {
+  transform: perspective(234px) scale(1) rotateX(25deg) skewX(5deg);
+  top: -60px;
+  left: 52%;
+}
+.light:nth-child(14) {
+  transform: perspective(234px) scale(1) rotateX(25deg) skewX(10deg);
+  top: -60px;
+  left: 54%;
+}
+.light:nth-child(15) {
+  transform: perspective(234px) scale(1) rotateX(25deg) skewX(15deg);
+  top: -60px;
+  left: 56%;
+}
+
+@keyframes light-initial {
+  0% {
+    @apply h-[20vh] w-[30px];
+    transform: perspective(234px) scale(0.8) rotateX(25deg) skewX(0deg);
+    top: -30px;
+    left: 50%;
+    opacity: 0.2;
+  }
+  100% {
+  }
+}
+
+.button {
+  background-color: #2c2c2c;
+  transition: all 0.5s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.008) 0.565274px 0.565274px 1.75872px 0px,
+    rgba(0, 0, 0, 0.02) 1.44525px 1.44525px 4.49656px 0px,
+    rgba(0, 0, 0, 0.043) 2.89741px 2.89741px 9.01462px 0px,
+    rgba(0, 0, 0, 0.08) 5.49248px 5.49248px 17.0886px 0px,
+    rgba(0, 0, 0, 0.16) 10.9174px 10.9174px 33.967px 0px,
+    rgba(0, 0, 0, 0.35) 24px 24px 74.6705px 0px,
+    rgb(0, 0, 0) 0px -16px 48px 0px inset;
+}
+.button:hover {
+  background-color: #ececec00;
+}
+.button::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 50%;
+  height: 3px;
+  transform: translateX(-60%);
+  background: linear-gradient(
+    90deg,
+    rgba(59, 56, 65, 0) 22.4%,
+    #ffffff 60.94%,
+    rgba(59, 56, 65, 0)
+  );
 }
